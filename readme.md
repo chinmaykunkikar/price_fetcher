@@ -1,3 +1,4 @@
+# Rupee Pull
 A Simple WebScrapper written in Python3 that fetches price of any listed item from JioMart.com and dumps them as JSON.
 
 ## Disclaimer
@@ -50,17 +51,18 @@ Available configurable values:
         {
         "pincode": "400026",
         "city": "Mumbai"
-    },
+        },
     ...
     ]
     ```
 3. URLS of categories that will be crawled -
     ```python
     url_to_category = [
-    {
+        {
         "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-vegetables/229",
         "category": "VEGETABLES"
-    },
+        
+        },
     ...
     ]
     ```
@@ -70,7 +72,7 @@ Available configurable values:
     ```
 
 ## Dump JSON Format
-Sample dumps are available at, [clean_data/clean-20210101-114910.json](clean_data/clean-20210101-114910.json) and [raw_data/raw-20210101-114545.json](raw_data/raw-20210101-114545.json).
+Sample dumps are available at - [clean_data/clean-20210101-114910.json](clean_data/clean-20210101-114910.json) and [raw_data/raw-20210101-114545.json](raw_data/raw-20210101-114545.json).
 
 ## Issues
 1. Names of some items differs between different cities, which makes it difficult to compare prices of an item accross city.
