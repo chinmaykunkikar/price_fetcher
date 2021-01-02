@@ -70,11 +70,11 @@ Available configurable values:
     ```
 
 ## Dump JSON Format
-Sample dumps are available at, `clean_data/clean-20210101-114910.json` and `raw_data/raw-20210101-114545.json`.
+Sample dumps are available at, [clean_data/clean-20210101-114910.json](clean_data/clean-20210101-114910.json) and [raw_data/raw-20210101-114545.json](raw_data/raw-20210101-114545.json).
 
 ## Issues
-1. Names of some items differs accross different cities, which makes it difficult to compare prices of an item accross city.
-2. Same item is sold in 2 different quantities at times, e.g: Onion 1kg and Onion 5Kg (Pack). So after cleaning there are 2 entries of Onion in JSON.
+1. Names of some items differs between different cities, which makes it difficult to compare prices of an item accross city.
+2. Same item is sold in 2 different quantities some times, e.g: Onion 1kg and Onion 5Kg (Pack). So after cleaning there are 2 entries of Onion in JSON.
 
 ## Future Implementations
 1. Normalize/Group Similar items.
