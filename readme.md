@@ -1,4 +1,4 @@
-# Rupee Pull
+# Jio Mart Price Fetcher
 A Simple WebScrapper written in Python3 that fetches price of any listed item from JioMart.com and dumps them as JSON.
 
 ## Disclaimer
