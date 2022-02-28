@@ -280,7 +280,7 @@ def write_to_csv_file(any_json, file_path):
         writer.writeheader()
         for item_list in json_list:
             for individual_item in item_list['items']:
-                writer.writerow({'Commodity': individual_item['name'], 'Price': individual_item['normalized_price']})
+                writer.writerow({'Commodity': individual_item['name'], 'Price (per kg)': individual_item['normalized_price']})
 
 def write_to_clean_csv_file(clean_json):
     file_path = clean_data_folder + os.path.sep + \
