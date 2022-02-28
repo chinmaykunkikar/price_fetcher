@@ -1,5 +1,5 @@
 # import boto3
-import time, json, os
+import time, json, os, csv
 
 # must not be changed
 raw_data_folder = "raw_data"
@@ -9,7 +9,7 @@ raw_file_name_format = "raw-%Y%m%d-%H%M%S"
 clean_data_folder = "clean_data"
 clean_file_name_format = "clean-%Y%m%d-%H%M%S"
 
-max_page_check = 2
+max_page_check = 4
 
 # input for main
 # add pincodes that you would like to grab prices from
@@ -18,30 +18,10 @@ pincode_to_city = [
         "pincode": "400026",
         "city": "Mumbai"
     },
-    {
-        "pincode": "110053",
-        "city": "Delhi"
-    },
-    {
-        "pincode": "560043",
-        "city": "Bangalore"
-    },
-    {
-        "pincode": "500003",
-        "city": "Hyderabad"
-    },
-    {
-        "pincode": "380006",
-        "city": "Ahmedabad"
-    },
-    {
-        "pincode": "600028",
-        "city": "Chennai"
-    },
-    {
-        "pincode": "700031",
-        "city": "Kolkata"
-    },
+    # {
+    #     "pincode": "110053",
+    #     "city": "Delhi"
+    # },
 ]
 
 # add categories and corresponding URLs
@@ -50,18 +30,18 @@ url_to_category = [
         "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-vegetables/229",
         "category": "VEGETABLES"
     },
-    {
-        "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-fruits/220",
-        "category": "FRUITS"
-    },
-    {
-        "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/herbs-seasonings/233",
-        "category": "HERBS"
-    },
-    {
-        "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/exotic-fruits-vegetables/243",
-        "category": "EXOTIC"
-    },
+    # {
+    #     "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-fruits/220",
+    #     "category": "FRUITS"
+    # },
+    # {
+    #     "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/exotic-fruits-vegetables/243",
+    #     "category": "EXOTIC"
+    # },
+    # {
+    #     "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/herbs-seasonings/233",
+    #     "category": "HERBS"
+    # },
 ]
 
 # No need to change
@@ -291,6 +271,21 @@ def write_to_raw_json_file(raw_json):
         time.strftime(raw_file_name_format) + ".json"
     return write_to_json_file(raw_json, file_path)
 
+def write_to_csv_file(any_json, file_path):
+    with open(file_path + ".json", "r") as json_file:
+        json_list = json.load(json_file)
+    with open(file_path + ".csv", 'w', newline='') as csv_file:
+        fieldnames = ['Commodity', 'Price (per kg)']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+        for item_list in json_list:
+            for individual_item in item_list['items']:
+                writer.writerow({'Commodity': individual_item['name'], 'Price': individual_item['normalized_price']})
+
+def write_to_clean_csv_file(clean_json):
+    file_path = clean_data_folder + os.path.sep + \
+        time.strftime(clean_file_name_format)
+    return write_to_csv_file(clean_json, file_path)
 
 # def write_to_json_file_on_s3(any_json, bucket_name, file_path):
 #     print("Writing... to [%s]" % file_path)

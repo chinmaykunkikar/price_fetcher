@@ -72,7 +72,6 @@ def get_normalized_names(json_items):
         pass
 
 
-
 if __name__ == "__main__":
     raw_file_path = sys.argv[1]
     raw_json = config.read_from_raw_json_file(raw_file_path)
@@ -82,3 +81,4 @@ if __name__ == "__main__":
     clean_json = merge_all_pages(clean_json)
 
     config.write_to_clean_json_file(clean_json)
+    config.write_to_clean_csv_file(clean_json)
