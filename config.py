@@ -3,11 +3,11 @@ import time, json, os, csv
 
 # must not be changed
 raw_data_folder = "raw_data"
-raw_file_name_format = "raw-%Y%m%d-%H%M%S"
+raw_file_name_format = "raw-%Y%m%d%H"
 
 # must not be changed
 clean_data_folder = "clean_data"
-clean_file_name_format = "clean-%Y%m%d-%H%M%S"
+clean_file_name_format = "clean-%Y%m%d%H"
 
 max_page_check = 4
 
