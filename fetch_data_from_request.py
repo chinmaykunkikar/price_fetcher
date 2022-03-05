@@ -14,7 +14,11 @@ def fetch_product_name_and_price(url, pincode):
 
     return_dict = {"url": url, "pincode": pincode, "city" : config.get_city_name_with_pincode(pincode), "category" : config.get_category_from_url(url), "items": []}
     cookies = {"nms_mgo_pincode": pincode}
-    reply = requests.get(url, cookies=cookies)
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36'}
+    reply = requests.get(url, headers=headers, cookies=cookies)
+
+    print(reply.headers)
+    print(reply.request.headers)
     
     if reply.status_code != 200:
         raise Exception("Return code other than 200 - Actual Return Code: %s" % reply.status_code)
