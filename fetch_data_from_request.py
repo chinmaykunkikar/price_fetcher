@@ -1,6 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
 
+import logging
+import sys
+logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
+
 import config
 
 def fetch_product_name_and_price(url, pincode):
