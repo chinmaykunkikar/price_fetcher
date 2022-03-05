@@ -15,26 +15,23 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.10'
+          python-version: '3.x'
           
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      
-      - name: get current date and hour and save it as environment variable
-        run: echo "NOW::$(date +'%Y%m%d%H')" >> $GITHUB_ENV
-          
+
       - name: execute fetch script
         run: python fetch_data_from_request.py
         
       - name: execute clean script
-        run: python clean_fetched_data.py raw_data/raw-$NOW
+        run: python clean_fetched_data.py raw_data/raw-$(date +'%Y%m%d%H')
 
       - name: commit files
         run: |
-          git config --local user.email "chinmay.kunkikar@gmail.com"
-          git config --local user.name "Chinmay Kunkikar (GitHub Action)"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git add -A
           git commit -m "Fetch jiomart prices ($(date +'%d-%m-%Y'))" -a
           
