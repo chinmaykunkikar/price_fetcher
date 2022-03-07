@@ -9,18 +9,16 @@ from selenium.common.exceptions import TimeoutException
 import config
 
 
-def fetch_product_name_and_price(url, pincode):
-    city = config.get_city_name_with_pincode(pincode)
+def fetch_product_name_and_price(url):
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
-    browser = webdriver.Chrome(
-        f"C:\webdrivers\chromedriver.exe", options=options)
+    browser = webdriver.Chrome(config.driver_path, options=options)
 
-    print("Fetching... [%s] for [%s - %s]" % (url, pincode, city))
+    print("Fetching [%s]" % (url))
 
-    return_dict = {"url": url, "pincode": pincode, "city": config.get_city_name_with_pincode(
-        pincode), "category": config.get_category_from_url(url), "items": []}
+    return_dict = {"url": url,
+                   "category": config.get_category_from_url(url), "items": []}
     try:
         browser.get(url)
         timeout_in_seconds = 10
@@ -49,23 +47,20 @@ def fetch_product_name_and_price(url, pincode):
 
     if len(return_dict["items"]) == 0:
         print(
-            ">>> No items fetched! [%s] for [%s - %s]" % (url, pincode, city))
+            ">>> No items fetched from [%s]" % (url))
 
-    print("Fetched! [%s] for [%s]" % (url, pincode))
+    print("Fetched from [%s]" % (url))
 
     return return_dict
 
 
-def fetch_all_product_name_and_price(pincode_to_city, url_to_category, max_page_check):
+def fetch_all_product_name_and_price(url_to_category):
     raw_json = []
-    for pin in pincode_to_city:
-        for url in url_to_category:
-            raw_json.append(fetch_product_name_and_price(
-                url["url"], pin["pincode"]))
+    for url in url_to_category:
+        raw_json.append(fetch_product_name_and_price(url["url"]))
     return raw_json
 
 
 if __name__ == "__main__":
-    raw_json = fetch_all_product_name_and_price(
-        config.pincode_to_city, config.url_to_category, config.max_page_check)
+    raw_json = fetch_all_product_name_and_price(config.url_to_category)
     config.write_to_raw_json_file(raw_json)

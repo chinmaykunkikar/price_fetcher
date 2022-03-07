@@ -11,6 +11,9 @@ clean_file_name_format = "clean-%Y%m%d%H"
 
 max_page_check = 4
 
+# path to selenium chromedriver
+driver_path = f"C:\webdrivers\chromedriver.exe"
+
 # input for main
 # add pincodes that you would like to grab prices from
 pincode_to_city = [
@@ -247,7 +250,7 @@ def read_from_raw_json_file(file_path):
         return json.load(json_file)
 
 def write_to_json_file(any_json, file_path):
-    print("Writing... to [%s]" % file_path)
+    print("Writing to [%s]" % file_path)
     with open(file_path, "w") as json_file:
         json.dump(any_json, json_file)
     print("Wrote to [%s]" % file_path)
