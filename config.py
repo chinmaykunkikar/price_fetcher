@@ -13,6 +13,9 @@ clean_file_name_format = "clean-%Y%m%d%H"
 
 max_page_check = 4
 
+# path to selenium chromedriver
+driver_path = f"C:\webdrivers\chromedriver.exe"
+
 # input for main
 # add pincodes that you would like to grab prices from
 pincode_to_city = [
@@ -20,10 +23,6 @@ pincode_to_city = [
         "pincode": "400026",
         "city": "Mumbai"
     },
-    # {
-    #     "pincode": "110053",
-    #     "city": "Delhi"
-    # },
 ]
 
 # add categories and corresponding URLs
@@ -32,18 +31,21 @@ url_to_category = [
         "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-vegetables/229",
         "category": "VEGETABLES"
     },
-    # {
-    #     "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-fruits/220",
-    #     "category": "FRUITS"
-    # },
-    # {
-    #     "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/exotic-fruits-vegetables/243",
-    #     "category": "EXOTIC"
-    # },
-    # {
-    #     "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/herbs-seasonings/233",
-    #     "category": "HERBS"
-    # },
+]
+
+fraazo_url_category = [
+    {
+        "url": "https://fraazo.com/listing/vegetables/regular-veggies/",
+        "category": "VEGETABLES"
+    },
+    {
+        "url": "https://fraazo.com/listing/vegetables/root-vegetables/",
+        "category": "VEGETABLES"
+    },
+    {
+        "url": "https://fraazo.com/listing/vegetables/onion-potato-tomatoes/",
+        "category": "VEGETABLES"
+    },
 ]
 
 # No need to change
