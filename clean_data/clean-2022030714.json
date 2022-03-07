@@ -1,0 +1,319 @@
+[{
+    "url": "https://fraazo.com/listing/vegetables/regular-veggies/",
+    "pincode": "400026",
+    "city": "Mumbai",
+    "category": "VEGETABLES",
+    "items": [{
+        "name": "Beans Flat (Papdi)",
+        "price": 22.0,
+        "normalized_measure": "kg",
+        "normalized_price": 88,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 22.0
+    }, {
+        "name": "Ladies Finger (Okra)",
+        "price": 10.0,
+        "normalized_measure": "kg",
+        "normalized_price": 40,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 10.0
+    }, {
+        "name": "Cauliflower",
+        "price": 32.0,
+        "normalized_measure": "piece",
+        "normalized_price": 32,
+        "selling_measure": "piece",
+        "selling_quantity": 1,
+        "selling_price": 32.0
+    }, {
+        "name": "Brinjal Kateri",
+        "price": 17.0,
+        "normalized_measure": "kg",
+        "normalized_price": 68,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 17.0
+    }, {
+        "name": "Cabbage",
+        "price": 22.0,
+        "normalized_measure": "piece",
+        "normalized_price": 22,
+        "selling_measure": "piece",
+        "selling_quantity": 1,
+        "selling_price": 22.0
+    }, {
+        "name": "Bitter Gourd (Karela)",
+        "price": 37.0,
+        "normalized_measure": "kg",
+        "normalized_price": 74,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 37.0
+    }, {
+        "name": "Pumpkin Green",
+        "price": 32.0,
+        "normalized_measure": "kg",
+        "normalized_price": 64,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 32.0
+    }, {
+        "name": "Capsicum (Shimla)",
+        "price": 17.0,
+        "normalized_measure": "kg",
+        "normalized_price": 68,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 17.0
+    }, {
+        "name": "Green Peas (Matar)",
+        "price": 28.0,
+        "normalized_measure": "kg",
+        "normalized_price": 56,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 28.0
+    }, {
+        "name": "Beans Chawli",
+        "price": 14.0,
+        "normalized_measure": "kg",
+        "normalized_price": 56,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 14.0
+    }, {
+        "name": "Beans French",
+        "price": 20.0,
+        "normalized_measure": "kg",
+        "normalized_price": 40,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 20.0
+    }, {
+        "name": "Pumpkin Red",
+        "price": 48.0,
+        "normalized_measure": "kg",
+        "normalized_price": 96,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 48.0
+    }, {
+        "name": "Tondli",
+        "price": 33.0,
+        "normalized_measure": "kg",
+        "normalized_price": 66,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 33.0
+    }, {
+        "name": "Bottle Gourd (Dudhi / Lauki)",
+        "price": 20.0,
+        "normalized_measure": "piece",
+        "normalized_price": 20,
+        "selling_measure": "piece",
+        "selling_quantity": 1,
+        "selling_price": 20.0
+    }, {
+        "name": "Brinjal Bharta",
+        "price": 30.0,
+        "normalized_measure": "kg",
+        "normalized_price": 60,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 30.0
+    }, {
+        "name": "Cucumber Green Indian (Kakdi)",
+        "price": 20.0,
+        "normalized_measure": "kg",
+        "normalized_price": 40,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 20.0
+    }, {
+        "name": "Tinda",
+        "price": 36.0,
+        "normalized_measure": "kg",
+        "normalized_price": 144,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 36.0
+    }, {
+        "name": "Ridge Gourd (Turai)",
+        "price": 21.0,
+        "normalized_measure": "kg",
+        "normalized_price": 84,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 21.0
+    }, {
+        "name": "Ash Gourd (White Pumpkin)",
+        "price": 25.0,
+        "normalized_measure": "kg",
+        "normalized_price": 50,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 25.0
+    }, {
+        "name": "Beans Cluster (Gavar)",
+        "price": 29.0,
+        "normalized_measure": "kg",
+        "normalized_price": 116,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 29.0
+    }, {
+        "name": "Snake Gourd (Bada Parwal)",
+        "price": 18.0,
+        "normalized_measure": "kg",
+        "normalized_price": 72,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 18.0
+    }, {
+        "name": "Cucumber White",
+        "price": 25.0,
+        "normalized_measure": "kg",
+        "normalized_price": 50,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 25.0
+    }, {
+        "name": "Sponge Gourd (Galka)",
+        "price": 37.0,
+        "normalized_measure": "kg",
+        "normalized_price": 74,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 37.0
+    }, {
+        "name": "Super Saver Combo (1 Kg Potato+ 1 Kg Tomato)",
+        "price": 53.0,
+        "normalized_measure": "piece",
+        "normalized_price": 53,
+        "selling_measure": "piece",
+        "selling_quantity": 1,
+        "selling_price": 53.0
+    }, {
+        "name": "Potato / Batata",
+        "price": 24.0,
+        "normalized_measure": "kg",
+        "normalized_price": 24,
+        "selling_measure": "kg",
+        "selling_quantity": 1,
+        "selling_price": 24.0
+    }, {
+        "name": "Onion",
+        "price": 34.0,
+        "normalized_measure": "kg",
+        "normalized_price": 34,
+        "selling_measure": "kg",
+        "selling_quantity": 1,
+        "selling_price": 34.0
+    }, {
+        "name": "Tomato / Tamatar",
+        "price": 16.0,
+        "normalized_measure": "kg",
+        "normalized_price": 32,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 16.0
+    }, {
+        "name": "3 Kg POT Combo (1 Kg Each, Potato + Tomato + Onion)",
+        "price": 87.0,
+        "normalized_measure": "piece",
+        "normalized_price": 87,
+        "selling_measure": "piece",
+        "selling_quantity": 1,
+        "selling_price": 87.0
+    }, {
+        "name": "Smart Saver Combo (1 Kg Potato+ 1 Kg Onion)",
+        "price": 55.0,
+        "normalized_measure": "piece",
+        "normalized_price": 55,
+        "selling_measure": "piece",
+        "selling_quantity": 1,
+        "selling_price": 55.0
+    }, {
+        "name": "Tomato - Cherry",
+        "price": 28.0,
+        "normalized_measure": "kg",
+        "normalized_price": 140,
+        "selling_measure": "gm",
+        "selling_quantity": 200,
+        "selling_price": 28.0
+    }, {
+        "name": "Onion - Sambhar",
+        "price": 24.0,
+        "normalized_measure": "kg",
+        "normalized_price": 96,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 24.0
+    }, {
+        "name": "Carrot Orange (Local)",
+        "price": 25.0,
+        "normalized_measure": "kg",
+        "normalized_price": 50,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 25.0
+    }, {
+        "name": "Beetroot",
+        "price": 22.0,
+        "normalized_measure": "kg",
+        "normalized_price": 44,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 22.0
+    }, {
+        "name": "Carrot Red (Delhi)",
+        "price": 20.0,
+        "normalized_measure": "kg",
+        "normalized_price": 40,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 20.0
+    }, {
+        "name": "Radish",
+        "price": 22.0,
+        "normalized_measure": "kg",
+        "normalized_price": 44,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 22.0
+    }, {
+        "name": "Sweet Potato",
+        "price": 32.0,
+        "normalized_measure": "kg",
+        "normalized_price": 64,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 32.0
+    }, {
+        "name": "Yam Purple (Kandh)",
+        "price": 25.0,
+        "normalized_measure": "kg",
+        "normalized_price": 100,
+        "selling_measure": "gm",
+        "selling_quantity": 250,
+        "selling_price": 25.0
+    }, {
+        "name": "Arbi (Colocasia)",
+        "price": 24.0,
+        "normalized_measure": "kg",
+        "normalized_price": 48,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 24.0
+    }, {
+        "name": "Yam (Suran / Elephant Foot)",
+        "price": 35.0,
+        "normalized_measure": "kg",
+        "normalized_price": 70,
+        "selling_measure": "gm",
+        "selling_quantity": 500,
+        "selling_price": 35.0
+    }]
+}]

@@ -18,30 +18,22 @@ pincode_to_city = [
         "pincode": "400026",
         "city": "Mumbai"
     },
-    # {
-    #     "pincode": "110053",
-    #     "city": "Delhi"
-    # },
 ]
 
 # add categories and corresponding URLs
 url_to_category = [
     {
-        "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-vegetables/229",
+        "url": "https://fraazo.com/listing/vegetables/regular-veggies/",
         "category": "VEGETABLES"
     },
-    # {
-    #     "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-fruits/220",
-    #     "category": "FRUITS"
-    # },
-    # {
-    #     "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/exotic-fruits-vegetables/243",
-    #     "category": "EXOTIC"
-    # },
-    # {
-    #     "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/herbs-seasonings/233",
-    #     "category": "HERBS"
-    # },
+    {
+        "url": "https://fraazo.com/listing/vegetables/onion-potato-tomatoes/",
+        "category": "VEGETABLES"
+    },
+    {
+        "url": "https://fraazo.com/listing/vegetables/root-vegetables/",
+        "category": "VEGETABLES"
+    },
 ]
 
 # No need to change
@@ -167,7 +159,7 @@ quantity_trim = [
         "selling_quantity" : 12
     },
     {
-        "suffix" : ["per pc", "1 pc", "1 piece", "each", "(each)", "whole", "per piece"],
+        "suffix" : ["per pc", "1 pc", "1 piece", "each", "(each)", "whole", "per piece", "1 unit"],
         "measure" : "piece",
         "price_multiplier" : 1,
         "selling_measure" : "piece",
@@ -286,19 +278,3 @@ def write_to_clean_csv_file(clean_json):
     file_path = clean_data_folder + os.path.sep + \
         time.strftime(clean_file_name_format)
     return write_to_csv_file(clean_json, file_path)
-
-# def write_to_json_file_on_s3(any_json, bucket_name, file_path):
-#     print("Writing... to [%s]" % file_path)
-#     s3 = boto3.resource("s3")
-#     s3.Bucket(bucket_name).put_object(Key=file_path, Body=json.dumps(any_json))
-#     return file_path
-
-# def write_to_clean_json_file_on_s3(clean_json, bucket_name):
-#     file_path = clean_data_folder + os.path.sep + \
-#         time.strftime(clean_file_name_format) + ".json"
-#     return write_to_json_file_on_s3(clean_json, bucket_name, file_path)
-
-# def write_to_raw_json_file_on_s3(raw_json, bucket_name):
-#     file_path = raw_data_folder + os.path.sep + \
-#         time.strftime(raw_file_name_format) + ".json"
-#     return write_to_json_file_on_s3(raw_json, bucket_name, file_path)
