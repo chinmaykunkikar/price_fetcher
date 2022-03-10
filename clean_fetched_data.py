@@ -8,7 +8,7 @@ def get_normalized_quantity(json_items):
 
     for item in json_items:
         is_found = False
-        for suffix in config.quantity_trim:
+        for suffix in quantity_measure.quantity_trim:
             for suff in suffix["suffix"]:
                 if item["raw_name"].lower().strip().endswith(suff):
                     if item["price"] != 0:
