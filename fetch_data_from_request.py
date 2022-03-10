@@ -4,18 +4,16 @@ from selenium import webdriver
 import config
 
 
-def fetch_product_name_and_price(url, pincode):
+def fetch_from_jiomart(url, pincode):
     city = config.get_city_name_with_pincode(pincode)
-    
-    options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    browser = webdriver.Chrome(config.driver_path, options=options)
+
+    config.initialize_selenium()
 
     print("Fetching [%s] for [%s - %s]" % (url, pincode, city))
 
     return_dict = {"url": url, "pincode": pincode, "city": config.get_city_name_with_pincode(
         pincode), "category": config.get_category_from_url(url), "items": []}
-    
+
     try:
         browser.get(url)
         browser.add_cookie({"name": "nms_mgo_pincode", "value": pincode})
@@ -51,7 +49,7 @@ def fetch_all_product_name_and_price(pincode_to_city, url_to_category, max_page_
     for pin in pincode_to_city:
         for url in url_to_category:
             for page_number in range(max_page_check):
-                raw_json.append(fetch_product_name_and_price(
+                raw_json.append(fetch_from_jiomart(
                     url["url"]+"/page/"+str(page_number+1), pin["pincode"]))
     return raw_json
 

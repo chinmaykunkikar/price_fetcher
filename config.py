@@ -246,6 +246,12 @@ quantity_trim = [
 # method definitions that are commonly used
 
 
+def initialize_selenium():
+    options = webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    browser = webdriver.Chrome(config.driver_path, options=options)
+
+
 def get_city_name_with_pincode(pincode):
     for pincode_city_map in pincode_to_city:
         if pincode == pincode_city_map["pincode"]:
