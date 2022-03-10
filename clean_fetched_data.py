@@ -55,7 +55,7 @@ def get_all_normalized_quantities_json(any_json):
 def merge_all_pages(any_json):
     return_json = []
     for entry in any_json:
-        if len(return_json) > 0 and entry["category"] == return_json[-1]["category"] and entry["pincode"] == return_json[-1]["pincode"]:
+        if len(return_json) > 0 and entry["category"] == return_json[-1]["category"]:
             return_json[-1]["items"].extend(entry["items"])
         else:
             return_json.append(entry)
