@@ -2,6 +2,8 @@ import math
 import config
 import sys
 
+import quantity_measure
+
 
 def get_normalized_quantity(json_items):
     quantity_items = []
