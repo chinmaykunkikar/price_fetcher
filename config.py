@@ -108,7 +108,7 @@ def write_to_csv_file(any_json, file_path):
         for item_list in json_list:
             for individual_item in item_list['items']:
                 writer.writerow(
-                    {'Commodity': individual_item['name'], 'Price (per kg)': individual_item['normalized_price']})
+                    {'Commodity': individual_item['raw_name'], 'Price (per kg)': individual_item['normalized_price']})
 
 
 def write_to_clean_csv_file(clean_json):
