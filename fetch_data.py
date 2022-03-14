@@ -27,11 +27,11 @@ if __name__ == "__main__":
         print("Usage:\n\tpython " + sys.argv[0] + " (jiomart|fraazo)\n")
         exit(1)
     else:
-        company = sys.argv[1]
-        if company == "jiomart":
+        retailer = sys.argv[1]
+        if retailer == "jiomart":
             raw_json = fetch_products_from_jiomart(
                 config.jiomart_url_category, config.pincode_to_city, config.max_page_check)
-        elif company == "fraazo":
+        elif retailer == "fraazo":
             raw_json = fetch_products_from_fraazo(config.fraazo_url_category)
         else:
             print("Usage:\n\tpython " + sys.argv[0] + " (jiomart|fraazo)\n")
