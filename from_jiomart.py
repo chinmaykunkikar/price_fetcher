@@ -15,7 +15,7 @@ def fetch_data(url, pincode):
     print("Fetching [%s] for [%s - %s]" % (url, pincode, city))
 
     return_dict = {"url": url, "pincode": pincode, "city": config.get_city_name_with_pincode(
-        pincode), "category": config.get_category_from_jiomart(url), "items": []}
+        pincode), "category": config.get_category_from_jiomart(url), "retailer": config.get_retailer_from_jiomart(url), "items": []}
 
     try:
         browser.get(url)

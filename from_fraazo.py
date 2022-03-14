@@ -19,7 +19,7 @@ def fetch_data(url):
     print("Fetching [%s]" % (url))
 
     return_dict = {"url": url,
-                   "category": config.get_category_from_fraazo(url), "items": []}
+                   "category": config.get_category_from_fraazo(url), "retailer": config.get_retailer_from_fraazo(url), "items": []}
     try:
         browser.get(url)
         timeout_in_seconds = 10

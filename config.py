@@ -11,10 +11,6 @@ raw_file_name_format = "raw-%Y%m%d%H"
 clean_data_folder = "clean_data"
 clean_file_name_format = "clean-%Y%m%d%H"
 
-
-def filename(seller):
-    clean_file_name_format = seller + "-%Y%m%d%H"
-
 max_page_check = 4
 
 # path to selenium chromedriver
@@ -32,6 +28,7 @@ pincode_to_city = [
 # add categories and corresponding URLs
 jiomart_url_category = [
     {
+        "retailer": "JIOMART",
         "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-vegetables/229",
         "category": "VEGETABLES"
     },
@@ -39,14 +36,17 @@ jiomart_url_category = [
 
 fraazo_url_category = [
     {
+        "retailer": "FRAAZO",
         "url": "https://fraazo.com/listing/vegetables/regular-veggies/",
         "category": "VEGETABLES"
     },
     {
+        "retailer": "FRAAZO",
         "url": "https://fraazo.com/listing/vegetables/root-vegetables/",
         "category": "VEGETABLES"
     },
     {
+        "retailer": "FRAAZO",
         "url": "https://fraazo.com/listing/vegetables/onion-potato-tomatoes/",
         "category": "VEGETABLES"
     },
@@ -71,6 +71,22 @@ def get_category_from_fraazo(url):
     for url_category_map in fraazo_url_category:
         if url_category_map["url"] in url:
             return url_category_map["category"]
+
+
+def get_retailer_from_jiomart(url):
+    for retailer_map in jiomart_url_category:
+        if retailer_map["url"] in url:
+            return retailer_map["retailer"]
+
+
+def get_retailer_from_fraazo(url):
+    for retailer_map in fraazo_url_category:
+        if retailer_map["url"] in url:
+            return retailer_map["retailer"]
+
+
+def get_retailer_from_json(file_path):
+    pass
 
 
 def read_from_raw_json_file(file_path):

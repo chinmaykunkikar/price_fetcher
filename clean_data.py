@@ -12,7 +12,7 @@ def get_normalized_quantity(json_items):
         is_found = False
         for suffix in quantity_measure.quantity_trim:
             for suff in suffix["suffix"]:
-                if item["raw_name"].lower().strip().endswith(suff) or suff in item["pack_size"].lower().strip():
+                if item["raw_name"].lower().strip().endswith(suff):
                     if item["price"] != 0:
                         quantity_items.append(
                             {
@@ -93,3 +93,4 @@ if __name__ == "__main__":
 
     config.write_to_clean_json_file(clean_json)
     config.write_to_clean_csv_file(clean_json)
+    config.get_retailer_from_json(clean_json)
