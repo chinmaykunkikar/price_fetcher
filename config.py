@@ -11,7 +11,7 @@ raw_file_name_format = "raw-%Y%m%d%H"
 clean_data_folder = "clean_data"
 clean_file_name_format = "clean-%Y%m%d%H"
 
-max_page_check = 4
+max_page_check = 3
 
 # path to selenium chromedriver
 driver_path = f"C:\webdrivers\chromedriver.exe"
