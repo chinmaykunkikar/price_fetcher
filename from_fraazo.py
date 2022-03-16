@@ -13,13 +13,12 @@ def fetch_data(url):
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
-    options.add_argument('--log-level 3')
     browser = webdriver.Chrome(config.driver_path, options=options)
 
     print("Fetching [%s]" % (url))
 
     return_dict = {"url": url,
-                   "category": config.get_category_from_fraazo(url), "retailer": config.get_retailer_from_fraazo(url), "items": []}
+                   "category": config.get_category_from_url(url), "retailer": config.get_retailer_from_url(url), "items": []}
     try:
         browser.get(url)
         timeout_in_seconds = 10
