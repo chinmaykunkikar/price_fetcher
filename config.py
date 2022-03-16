@@ -25,16 +25,12 @@ pincode_to_city = [
     },
 ]
 
-# add categories and corresponding URLs
-jiomart_url_category = [
+retailer_url_category = [
     {
         "retailer": "JIOMART",
         "url": "https://www.jiomart.com/c/groceries/fruits-vegetables/fresh-vegetables/229",
         "category": "VEGETABLES"
     },
-]
-
-fraazo_url_category = [
     {
         "retailer": "FRAAZO",
         "url": "https://fraazo.com/listing/vegetables/regular-veggies/",
@@ -61,26 +57,14 @@ def get_city_name_with_pincode(pincode):
             return pincode_city_map["city"]
 
 
-def get_category_from_jiomart(url):
-    for url_category_map in jiomart_url_category:
+def get_category_from_url(url):
+    for url_category_map in retailer_url_category:
         if url_category_map["url"] in url:
             return url_category_map["category"]
 
 
-def get_category_from_fraazo(url):
-    for url_category_map in fraazo_url_category:
-        if url_category_map["url"] in url:
-            return url_category_map["category"]
-
-
-def get_retailer_from_jiomart(url):
-    for retailer_map in jiomart_url_category:
-        if retailer_map["url"] in url:
-            return retailer_map["retailer"]
-
-
-def get_retailer_from_fraazo(url):
-    for retailer_map in fraazo_url_category:
+def get_retailer_from_url(url):
+    for retailer_map in retailer_url_category:
         if retailer_map["url"] in url:
             return retailer_map["retailer"]
 
@@ -117,14 +101,14 @@ def write_to_raw_json_file(raw_json):
 def write_to_csv_file(any_json, file_path):
     with open(file_path + ".json", "r") as json_file:
         json_list = json.load(json_file)
-    with open(file_path + ".csv", 'w', newline='') as csv_file:
-        fieldnames = ['Commodity', 'Price (per kg)']
+    with open(file_path + ".csv", "w", newline="") as csv_file:
+        fieldnames = ["Commodity", "Price (per kg)"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
         for item_list in json_list:
-            for item in item_list['items']:
+            for item in item_list["items"]:
                 writer.writerow(
-                    {'Commodity': item['raw_name'], 'Price (per kg)': item['normalized_price']})
+                    {"Commodity": item["raw_name"], "Price (per kg)": item["normalized_price"]})
 
 
 def write_to_clean_csv_file(clean_json):
