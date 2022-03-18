@@ -14,14 +14,14 @@ clean_file_name_format = "clean-%Y%m%d%H"
 max_page_check = 3
 
 # path to selenium chromedriver
-driver_path = f"C:\webdrivers\chromedriver.exe"
+# driver_path = f"C:\webdrivers\chromedriver.exe"
 
 # input for main
 # add pincodes that you would like to grab prices from
 pincode_to_city = [
     {
-        "pincode": "400026",
-        "city": "Mumbai"
+        "pincode": "400703",
+        "city": "Thane"
     },
 ]
 

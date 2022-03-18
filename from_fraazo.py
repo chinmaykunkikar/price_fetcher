@@ -14,9 +14,9 @@ import config
 def fetch_data(url):
 
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
+    options.headless = True
     browser = webdriver.Chrome(service=Service(
-        ChromeDriverManager().install()), options=options)
+        ChromeDriverManager(log_level=0, print_first_line=False).install()), options=options)
 
     print("Fetching [%s]" % (url))
 
