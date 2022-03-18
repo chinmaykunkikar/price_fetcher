@@ -26,6 +26,7 @@ python -m venv .env
 .env\Scripts\Activate.ps1
 
 # install requirements
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 
 # once all requirements has been installed

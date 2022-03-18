@@ -93,4 +93,3 @@ if __name__ == "__main__":
 
     config.write_to_clean_json_file(clean_json)
     config.write_to_clean_csv_file(clean_json)
-    config.get_retailer_from_json(clean_json)

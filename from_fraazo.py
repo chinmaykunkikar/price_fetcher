@@ -3,6 +3,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 from bs4 import BeautifulSoup
 
@@ -12,8 +14,9 @@ import config
 def fetch_data(url):
 
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    browser = webdriver.Chrome(config.driver_path, options=options)
+    options.headless = True
+    browser = webdriver.Chrome(service=Service(
+        ChromeDriverManager(log_level=0, print_first_line=False).install()), options=options)
 
     print("Fetching [%s]" % (url))
 

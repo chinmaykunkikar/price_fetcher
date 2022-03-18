@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 from bs4 import BeautifulSoup
 
@@ -9,8 +11,9 @@ def fetch_data(url, pincode):
     city = config.get_city_name_with_pincode(pincode)
 
     options = webdriver.ChromeOptions()
-    options.add_argument('--headless')
-    browser = webdriver.Chrome(config.driver_path, options=options)
+    options.headless = True
+    browser = webdriver.Chrome(service=Service(
+        ChromeDriverManager(log_level=0, print_first_line=False).install()), options=options)
 
     print("Fetching [%s] for [%s - %s]" % (url, pincode, city))
 
@@ -28,13 +31,12 @@ def fetch_data(url, pincode):
         browser.quit()
 
     # Get Product Name, Measure and Quantity from RawName of the product
-    for scr in soup('span', {'class': 'clsgetname'}):
-        if 'ellipsis' not in scr.attrs['class']:
-            return_dict["items"].append(
-                {"raw_name": str(scr.contents[0]).strip()})
+    for scr in soup.select("div[id='mstar_box'] span[class='clsgetname']"):
+        return_dict["items"].append(
+            {"raw_name": str(scr.contents[0]).strip()})
 
     # Get Price
-    for i, scr in enumerate(soup('span', {'id': 'final_price'})):
+    for i, scr in enumerate(soup.select("div[id='mstar_box'] span[id='final_price']")):
         return_dict["items"][i]["price"] = float(
             scr.contents[0].replace("₹", "").strip())
 

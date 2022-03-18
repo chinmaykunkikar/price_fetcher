@@ -5,23 +5,18 @@ import csv
 
 # must not be changed
 raw_data_folder = "raw_data"
-raw_file_name_format = "raw-%Y%m%d%H"
-
-# must not be changed
 clean_data_folder = "clean_data"
-clean_file_name_format = "clean-%Y%m%d%H"
+
+file_name_format = "%Y%m%d"
 
 max_page_check = 3
-
-# path to selenium chromedriver
-driver_path = f"C:\webdrivers\chromedriver.exe"
 
 # input for main
 # add pincodes that you would like to grab prices from
 pincode_to_city = [
     {
-        "pincode": "400026",
-        "city": "Mumbai"
+        "pincode": "400703",
+        "city": "Thane"
     },
 ]
 
@@ -69,8 +64,8 @@ def get_retailer_from_url(url):
             return retailer_map["retailer"]
 
 
-def get_retailer_from_json(file_path):
-    pass
+def get_retailer_from_json(any_json):
+    return str(any_json[0]["retailer"]).lower()
 
 
 def read_from_raw_json_file(file_path):
@@ -88,13 +83,15 @@ def write_to_json_file(any_json, file_path):
 
 def write_to_clean_json_file(clean_json):
     file_path = clean_data_folder + os.path.sep + \
-        time.strftime(clean_file_name_format) + ".json"
+        "clean-" + time.strftime(file_name_format) + \
+        "-" + get_retailer_from_json(clean_json) + ".json"
     return write_to_json_file(clean_json, file_path)
 
 
 def write_to_raw_json_file(raw_json):
     file_path = raw_data_folder + os.path.sep + \
-        time.strftime(raw_file_name_format) + ".json"
+        "raw-" + time.strftime(file_name_format) + \
+        "-" + get_retailer_from_json(raw_json) + ".json"
     return write_to_json_file(raw_json, file_path)
 
 
@@ -113,5 +110,6 @@ def write_to_csv_file(any_json, file_path):
 
 def write_to_clean_csv_file(clean_json):
     file_path = clean_data_folder + os.path.sep + \
-        time.strftime(clean_file_name_format)
+        "clean-" + time.strftime(file_name_format) + "-" + \
+        get_retailer_from_json(clean_json)
     return write_to_csv_file(clean_json, file_path)
