@@ -1,4 +1,6 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
 
 from bs4 import BeautifulSoup
 
@@ -10,7 +12,8 @@ def fetch_data(url, pincode):
 
     options = webdriver.ChromeOptions()
     options.add_argument('--headless')
-    browser = webdriver.Chrome(config.driver_path, options=options)
+    browser = webdriver.Chrome(service=Service(
+        ChromeDriverManager().install()), options=options)
 
     print("Fetching [%s] for [%s - %s]" % (url, pincode, city))
 
