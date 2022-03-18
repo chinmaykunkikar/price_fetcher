@@ -28,13 +28,12 @@ def fetch_data(url, pincode):
         browser.quit()
 
     # Get Product Name, Measure and Quantity from RawName of the product
-    for scr in soup('span', {'class': 'clsgetname'}):
-        if 'ellipsis' not in scr.attrs['class']:
-            return_dict["items"].append(
-                {"raw_name": str(scr.contents[0]).strip()})
+    for scr in soup.select("div[id='mstar_box'] span[class='clsgetname']"):
+        return_dict["items"].append(
+            {"raw_name": str(scr.contents[0]).strip()})
 
     # Get Price
-    for i, scr in enumerate(soup('span', {'id': 'final_price'})):
+    for i, scr in enumerate(soup.select("div[id='mstar_box'] span[id='final_price']")):
         return_dict["items"][i]["price"] = float(
             scr.contents[0].replace("₹", "").strip())
 
