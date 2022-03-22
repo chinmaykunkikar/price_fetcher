@@ -120,7 +120,7 @@ quantity_trim = [
         "selling_quantity": 12
     },
     {
-        "suffix": ["per pc", "1 pc", "1 piece", "each", "(each)", "whole", "per piece"],
+        "suffix": ["per pc", "1 pc", "1 piece", "each", "(each)", "whole", "per piece", "1 unit"],
         "measure": "piece",
         "price_multiplier": 1,
         "selling_measure": "piece",
