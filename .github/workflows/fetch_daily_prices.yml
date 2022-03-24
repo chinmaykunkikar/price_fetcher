@@ -2,8 +2,8 @@ name: fetch-daily-prices
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 0 * * *'
+  # schedule:
+  #   - cron: '0 0 * * *'
 
 jobs:
   build:
@@ -15,7 +15,7 @@ jobs:
       - name: setup python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'
+          python-version: '3.10'
           
       - name: install python packages
         run: |
@@ -23,20 +23,20 @@ jobs:
           pip install -r requirements.txt
 
       - name: execute fetch script
-        run: python fetch_data_from_request.py
+        run: python fetch_data.py fraazo
         
       - name: execute clean script
-        run: python clean_fetched_data.py raw_data/raw-$(date +'%Y%m%d%H')
+        run: python clean_data.py raw_data/raw-$(date +'%Y%m%d')
 
-      - name: commit files
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add -A
-          git commit -m "Fetch jiomart prices ($(date +'%d-%m-%Y'))" -a
+      # - name: commit files
+      #   run: |
+      #     git config --local user.email "actions@github.com"
+      #     git config --local user.name "GitHub Actions"
+      #     git add -A
+      #     git commit -m "Fetch jiomart prices ($(date +'%d-%m-%Y'))" -a
           
-      - name: push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+      # - name: push changes
+      #   uses: ad-m/github-push-action@v0.6.0
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     branch: main
