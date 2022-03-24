@@ -12,22 +12,39 @@ def get_normalized_quantity(json_items):
         is_found = False
         for suffix in quantity_measure.quantity_trim:
             for suff in suffix["suffix"]:
-                if item["raw_name"].lower().strip().endswith(suff):
-                    if item["price"] != 0:
-                        quantity_items.append(
-                            {
-                                "raw_name": item["raw_name"],
-                                "price": item["price"],
-                                "name": item["raw_name"][:-(len(suff))].strip().strip("-"),
-                                "normalized_measure": suffix["measure"],
-                                "normalized_price": math.ceil(item["price"] * suffix["price_multiplier"]),
-                                "selling_measure": suffix["selling_measure"],
-                                "selling_quantity": suffix["selling_quantity"],
-                                "selling_price": item["price"]
-                            }
-                        )
-                    is_found = True
-                    break
+                if "pack_size" not in item:
+                    if item["raw_name"].lower().strip().endswith(suff):
+                        if item["price"] != 0:
+                            quantity_items.append(
+                                {
+                                    "raw_name": item["raw_name"],
+                                    "price": item["price"],
+                                    "name": item["raw_name"][:-(len(suff))].strip().strip("-"),
+                                    "normalized_measure": suffix["measure"],
+                                    "normalized_price": math.ceil(item["price"] * suffix["price_multiplier"]),
+                                    "selling_measure": suffix["selling_measure"],
+                                    "selling_quantity": suffix["selling_quantity"],
+                                    "selling_price": item["price"]
+                                }
+                            )
+                        is_found = True
+                        break
+                else:
+                    if suff in item["pack_size"].lower().strip():
+                        if item["price"] != 0:
+                            quantity_items.append(
+                                {
+                                    "name": item["raw_name"],
+                                    "price": item["price"],
+                                    "normalized_measure": suffix["measure"],
+                                    "normalized_price": math.ceil(item["price"] * suffix["price_multiplier"]),
+                                    "selling_measure": suffix["selling_measure"],
+                                    "selling_quantity": suffix["selling_quantity"],
+                                    "selling_price": item["price"]
+                                }
+                            )
+                        is_found = True
+                        break
             if is_found:
                 break
         if not is_found:

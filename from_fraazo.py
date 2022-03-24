@@ -15,6 +15,7 @@ def fetch_data(url):
 
     options = webdriver.ChromeOptions()
     options.headless = True
+    options.add_argument("--log-level=3")
     browser = webdriver.Chrome(service=Service(
         ChromeDriverManager(log_level=0, print_first_line=False).install()), options=options)
 

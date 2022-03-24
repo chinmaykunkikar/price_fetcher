@@ -99,13 +99,17 @@ def write_to_csv_file(any_json, file_path):
     with open(file_path + ".json", "r") as json_file:
         json_list = json.load(json_file)
     with open(file_path + ".csv", "w", newline="") as csv_file:
-        fieldnames = ["Commodity", "Price (per kg)"]
+        fieldnames = ["Commodity", "Normal Price", "Normal UoM"]
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
         writer.writeheader()
         for item_list in json_list:
             for item in item_list["items"]:
                 writer.writerow(
-                    {"Commodity": item["raw_name"], "Price (per kg)": item["normalized_price"]})
+                    {
+                        "Commodity": item["name"],
+                        "Normal Price": item["normalized_price"],
+                        "Normal UoM": item["normalized_measure"],
+                    })
 
 
 def write_to_clean_csv_file(clean_json):
