@@ -41,6 +41,11 @@ retailer_url_category = [
         "url": "https://fraazo.com/listing/vegetables/onion-potato-tomatoes/",
         "category": "VEGETABLES"
     },
+    {
+        "retailer": "AGMARKNET",
+        "url": "https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd000001902b31a21daa411e7ee1d683e5fbc2dc&format=csv&limit=1000&filters[state]=Maharashtra&filters[district]=Mumbai",
+        "category": "VEGETABLES"
+    },
 ]
 
 # method definitions that are commonly used
@@ -81,6 +86,14 @@ def write_to_json_file(any_json, file_path):
     return file_path
 
 
+def write_to_any_file(any_data, file_path):
+    print("Writing to [%s]" % file_path)
+    with open(file_path, "wb") as any_file:
+        any_file.write(any_data)
+    print("Wrote to [%s]" % file_path)
+    return file_path
+
+
 def write_to_clean_json_file(clean_json):
     file_path = clean_data_folder + os.path.sep + \
         "clean-" + time.strftime(file_name_format) + \
@@ -117,3 +130,10 @@ def write_to_clean_csv_file(clean_json):
         "clean-" + time.strftime(file_name_format) + "-" + \
         get_retailer_from_json(clean_json)
     return write_to_csv_file(clean_json, file_path)
+
+
+def write_to_agmark_csv_file(clean_csv):
+    file_path = clean_data_folder + os.path.sep + \
+        "clean-" + time.strftime(file_name_format) + "-" + \
+        "agmarknet.csv"
+    return write_to_any_file(clean_csv, file_path)
